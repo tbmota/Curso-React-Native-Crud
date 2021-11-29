@@ -53,3 +53,7 @@ const screenOptions = {
     fontWeight: 'bold'
   }
 }
+
+//precisa instalar 
+// npm install react-native-gesture-handler
+// react-native link react-native-gesture-handler
