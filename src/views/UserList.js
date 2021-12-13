@@ -5,8 +5,7 @@ import UsersContext from '../context/UsersContext'
 
 export default props => {
 
-    const { state, dispach } = useContext(UsersContext)
-    // console.warn(Object.keys(ctx))
+    const { state, dispatch } = useContext(UsersContext)
 
     function confirmUserDeletion(user) {
         Alert.alert('Excluir Usuário', 'Deseja excluir o usuário', [
@@ -26,7 +25,6 @@ export default props => {
     }
 
     function getActions(user) {
-        //usuário tá sendo passado como parâmetro
         return (
             <> 
                 <Button
@@ -35,7 +33,6 @@ export default props => {
                     icon={<Icon name="edit" size={25} color="orange" />}
                 />
                 <Button
-                    // onPress={() => props.navigation.navigate('UserForm', user)}
                     onPress={() => confirmUserDeletion(user)}
                     type="clear"
                     icon={<Icon name="delete" size={25} color="red" />}
@@ -60,13 +57,19 @@ export default props => {
     return (
         <View>
             <FlatList
-                keyExtractor={user => user.id.toString()}//definir uma chave pra cada um dos elementos
+                keyExtractor={user => user.id.toString()}
                 data={state.users}
                 renderItem={getUserItem}
             />
         </View>
     )
 }
+
+// console.warn(Object.keys(ctx))
+//usuário tá sendo passado como parâmetro
+// onPress={() => props.navigation.navigate('UserForm', user)}
+//definir uma chave pra cada um dos elementos
+
 
 //para ajudar no processo de debug posso usar o console.warn
 // export default props => {

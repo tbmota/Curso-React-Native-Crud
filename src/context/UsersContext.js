@@ -2,7 +2,7 @@ import React, { createContext, useReducer } from 'react'
 import users from '../data/users'
 
 const initialState = { users }
-const UsersContext = createContext({}) //criei um contexto, passei um objeto vazio pra inicializar este contexto. Dentro desse contexto UsersContext criei um Provider que vai receber uma lista de elementos props.children, tudo que eu passar dentro do provider vai renderizar aqui e estou disponibilizando um valor, um objeto que tem o state e dentro desse state tenho a lista de usuários
+const UsersContext = createContext({}) 
 
 const actions = {
     createUser(state, action){
@@ -48,3 +48,4 @@ export const UsersProvider = props => {
 export default UsersContext
 
 // no atributo state vou passar uma lista de usuários
+// criei um contexto, passei um objeto vazio pra inicializar este contexto. Dentro desse contexto UsersContext criei um Provider que vai receber uma lista de elementos props.children, tudo que eu passar dentro do provider vai renderizar aqui e estou disponibilizando um valor, um objeto que tem o state e dentro desse state tenho a lista de usuários
